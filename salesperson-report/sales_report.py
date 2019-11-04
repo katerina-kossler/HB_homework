@@ -10,22 +10,26 @@ def generate_number_sales(filepath):
         melons they have sold
             '(Salesperson) sold (Melons Sold)'
         
-        Assumptions: Assumes only one entry is given per salesperson
+        Assumptions: 
         Assumes revenue data is not needed for presentation
     """
 
     melons_by_salesperson = {}
-    # opens data sheet and processes each line 
-    file = open(filepath)
-    for line in file:
-        line = line.rstrip()
-        entries = line.split('|')
-        salesperson = entries[0]
-        melons = int(entries[2])
-        # processes each salespersons melon sales into a dictionary
-        # this has much faster look up time than two lists
-        if salesperson not in melons_by_salesperson:
-            melons_by_salesperson[salesperson] = melons
+    # opens data sheet and processes each line; closes when through file
+    with open(filepath) as file:
+        for line in file:
+            line = line.rstrip()
+            entries = line.split('|')
+            # unpacks variables
+            salesperson, revenue, melons = entries
+            # processes each salespersons melon sales into a dictionary
+            # this has much faster look up time than two lists
+            if salesperson in melons_by_salesperson:
+                melons_by_salesperson[salesperson] += melons
+            else:
+                melons_by_salesperson[salesperson] = melons
+
+
     # looks up each salesperson and prints a statement with number of melons
     # they were able to sell in given time period
     for person in melons_by_salesperson.keys():
