@@ -33,4 +33,9 @@ class Melon(object):
 
 # FIXME: Add Squash class definition here.
 class Squash(Melon):
-    pass
+    def prep(self):
+        robots.cleanerbot.clean(self)
+        robots.stickerbot.apply_logo(self)
+        # note for two lines above, more efficient to use 
+        # super.prep(self) as its the same prep aside from a painting step 
+        robots.painterbot.paint(self)
