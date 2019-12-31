@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Skills JavaScript</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/styles.css">
+</head>
+<body class="container">
+  <h1>JavaScript Assessment</h1>
+  <p>
+    For each numbered problem, fill in the corresponding <code>&lt;script&gt;</code>
+    section with JavaScript to solve the problem. The location of this file is
+    <strong>templates/js-assessment.html</strong>.</p>
+  <p>
+    <b>Note:</b> you should only add JavaScript; you cannot change the HTML
+    otherwise <b>at all</b>. Read questions carefully. Some require you to use
+    jQuery and others specifically don't allow it.
+  </p>
+  <p>
+    For all problems, you can use built-in JavaScript or jQuery.
+    We didn't include jQuery in this document, though&mdash;so your first task
+    before using any JQuery is to include it!
+  </p>
+
+  <!-- /////////////////////////////////////////////////////////////////////// -->
+
+  <h3>Manipulating the DOM</h3>
+
+  <p>
+    Add an event listener to the "signIn" button that toggles the text of the
+    button on click. If the button says Log In, change the text to Log Out, and if
+    it says Log Out, toggle it to say Log In.
+  </p>
+  <p>
+    Do not update any of the HTML provided.
+  </p>
+
+  <button id="signIn" class="signInText">Log In</button>
+  <script>
+    "use strict";
+    // code here for above-problem
+  </script>
+
+  <div class="hint">
+    <div>
+      Don't know or don't remember how to change the text of an element you find
+      in JavaScript?
+      That's what the console.dir(object) feature is so useful for&mdash;it gives
+      you the complete list of properties/methods on an object!
+    </div>
+  </div>
+
+  <!-- /////////////////////////////////////////////////////////////////////// -->
+
+  <h3>Preventing Form Submission</h3>
+  <p>
+    Normally, this form submits to <code>some-script</code>. Make it pop up an
+    alert box instead. Do not update any of the HTML provided.
+  </p>
+
+  <fieldset>
+    <form action="some-script" id="prevent-form-submission-form">
+      <label for="favorite-color-field">Favorite color:</label>
+      <input type="text" name="favorite-color" id="favorite-color-field">
+      <input
+        type="submit"
+        id="prevent-form-submission-button"
+        value="Just an Alert, Please!"
+      >
+    </form>
+  </fieldset>
+
+  <script>
+    "use strict";
+    // code here for above problem
+  </script>
+
+  <div class="hint">
+    <div>
+      Remember that you can listen for events on forms as well as buttons. What
+      event should you listen for here?
+    </div>
+  </div>
+
+  <!-- /////////////////////////////////////////////////////////////////////// -->
+
+  <h3>Color Change</h3>
+  <p>
+    Write code so that when someone clicks the button with the id "blue", all
+    elements with the class "colorChange" get a blue background, and when someone
+    clicks the button with the id "red", all the "colorChange" class elements get a
+    red background.
+  </p>
+  <p>
+    Do not change the HTML for this problem.
+  </p>
+
+  <button id="red">Turn Red</button>
+  <button id="blue">Turn Blue</button>
+  <div id="colorHeadings">
+    <h1 class="colorChange">This is a great header.</h1>
+    <h2>This is another cool header, but it shouldn't change color.</h2>
+    <p class="colorChange">This paragraph should change color.</p>
+  </div>
+
+  <script>
+    "use strict";
+    // code here for above problem
+  </script>
+
+  <!-- /////////////////////////////////////////////////////////////////////// -->
+
+  <h3>Down With Cats!</h3>
+  <p>
+    Due to complaints from staff who are not entirely cat fans, we are interested
+    in increasing the number of other cute animals in our curriculum. We need you
+    to change the following image of a cat to one of a dog when you double-click
+    on the image. Feel free to Google for any cute animal photo you would like to
+    use. Do not update any of the HTML provided.
+  </p>
+
+  <fieldset>
+    <img
+      src="https://s-media-cache-ak0.pinimg.com/236x/d3/e9/fc/d3e9fc222c9bd0d12e0ff126acf7df00.jpg"
+      alt="Adorbz"
+      id="kittenz-rule"
+    >
+  </fieldset>
+
+  <script>
+    "use strict";
+    // code here for above problem
+  </script>
+
+  <!-- /////////////////////////////////////////////////////////////////////// -->
+
+  <h3>Factorial</h3>
+  <p>
+    The factorial of a number is the product of an integer and all the integers
+    below it. For example, the factorial of 4 is equal to 4 * 3 * 2 * 1 = 24. The
+    factorial of 6 is 6 * 5 * 4 * 3 * 2 * 1 = 720.
+  </p>
+  <ul>
+    <li>
+      Write the following code to calculate the factorial of a positive integer (you
+      don't need to worry about negative numbers).
+    </li>
+    <li>
+      Write a function that calculates the factorial of a positive number
+      Add an event listener that catches when someone clicks on the "calculate"
+      button and:
+      <ul>
+        <li> gets whatever number is inside the "number" input field</li>
+        <li>calls your function that calculates a factorial</li>
+        <li>puts the result of the function inside the "result" span</li>
+      </ul>
+    </li>
+  </ul>
+  <p>
+    Do not update any of the HTML provided.
+  </p>
+
+  <p>For which number would you like the factorial?</p>
+  <div>
+    <input type="number" name="number" id="number">
+    <button id="calculate">Calculate!</button>
+  </div>
+
+  <p>
+    <b>Result: </b><span id="result"></span>
+  </p>
+
+  <script>
+    "use strict";
+    // code here for above problem
+  </script>
+  </body>
+</html>
