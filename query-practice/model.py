@@ -6,7 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 # the Flask-SQLAlchemy helper library. On this, we can find the `session`
 # object, where we do most of our interactions (like committing, etc.)
 
-db = SQLAlchemy()
+db = SQLAlchemym()
 
 
 ##############################################################################
@@ -22,6 +22,8 @@ class User(db.Model):
     password = db.Column(db.String(64), nullable=True)
     age = db.Column(db.Integer, nullable=True)
     zipcode = db.Column(db.String(15), nullable=True)
+
+    ratings = db.relationship('Rating')
 
     def __repr__(self):
         """Provide helpful representation when printed."""
@@ -40,6 +42,8 @@ class Movie(db.Model):
     title = db.Column(db.String(64))
     released_at = db.Column(db.DateTime)
     imdb_url = db.Column(db.String(200))
+
+    ratings = db.relationship('Rating')
 
     def __repr__(self):
         """Provide helpful representation when printed."""
@@ -60,12 +64,10 @@ class Rating(db.Model):
     score = db.Column(db.Integer)
 
     # Define relationship to user
-    user = db.relationship("User",
-                           backref=db.backref("ratings", order_by=rating_id))
+    user = db.relationship('User')
 
     # Define relationship to movie
-    movie = db.relationship("Movie",
-                            backref=db.backref("ratings", order_by=rating_id))
+    movie = db.relationship('Movie')
 
     def __repr__(self):
         """Provide helpful representation when printed."""
